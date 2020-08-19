@@ -1,0 +1,15 @@
+.navbar{
+    text-align:center;
+    padding-top: 20px; 
+  }
+p{
+    display: inline-block;
+    margin: auto;
+    font-size: 30px; 
+    border:2px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+  }

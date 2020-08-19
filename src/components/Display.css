@@ -1,0 +1,11 @@
+.course-display{
+    background-color: orange;
+    width:200px;
+    height:220px;
+    text-align:center;
+    color: white;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

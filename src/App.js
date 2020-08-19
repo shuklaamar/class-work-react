@@ -1,26 +1,60 @@
 import React from 'react';
-import logo from './logo.svg';
+import Display from './components/Display';
+import Navbar from './components/Navbar';
+import Form from './components/Form';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    Coursedetails :[
+       {id:"1",title:"node",details:"Its a ggod thing",Instructor:"Gryffindor"},
+       {id:"2",title:"React",details:"will learn",Instructor:"Hufflepuff"},
+       {id:"3",title:"CP",details:"Its a ggod thing",Instructor:"Slytherin"},
+       {id:"4",title:"C++",details:"Will do it soon",Instructor:"Ravenclaw"}
+      ]
+}     
+    addcourse = (course) => {
+          course.id=Math.floor(Math.random()*100)
+          let arr=[...this.state.Coursedetails,course];
+          this.setState({
+          Coursedetails:arr
+          })
+    }
+    navbar = (course) => {
+      let arr = this.state.Coursedetails.filter((cours1)=>{
+      // console.log(course);
+        return cours1.Instructor === "Gryffindor"; 
+      })
+      console.log(arr);
+      this.setState({
+        Coursedetails:arr
+      })
+    }
+
+    delete = (course) => {
+     // console.log(course)
+      let arr = this.state.Coursedetails.filter((course1)=>{
+        console.log(course1.id)
+        return course1.id !== course;
+      })
+      console.log(arr);
+      this.setState({
+        Coursedetails:arr
+      })
+    }
+  render(){
+    return (
+      <div className="App">
+        <h1>Course Details</h1>
+        <Navbar filte={this.navbar}/>
+        <Display
+        coursedetails={this.state.Coursedetails}
+        delete={this.delete}
+        />
+        <Form addcourse={this.addcourse}/>
+      </div>
+    );
+  }
 }
 
 export default App;
