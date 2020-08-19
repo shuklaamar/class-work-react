@@ -14,7 +14,7 @@ class App extends React.Component {
       ]
 }     
     addcourse = (course) => {
-          course.id=Math.floor(Math.random()*100)
+          course.id=Math.floor(Math.random()*100).toString();
           let arr=[...this.state.Coursedetails,course];
           this.setState({
           Coursedetails:arr
