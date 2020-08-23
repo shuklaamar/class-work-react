@@ -26,14 +26,14 @@ class Form extends Component{
     render(){
         return(
             <form className="basic" onSubmit={this.handleSubmit}>
-                <label htmlFor="title">Course Name:</label>
-                <input type="text" id="title" placeholder="enter you course name" onChange={this.handleonChange} value={this.state.title}></input><br></br>
+                <label htmlFor="title">Title:</label>
+                <input type="text" id="title" placeholder="enter you Title" onChange={this.handleonChange} value={this.state.title}></input><br></br>
 
                 <label htmlFor="details">Details:</label>
                 <input type="text" id="details" placeholder="enter you Details" onChange={this.handleonChange} value={this.state.details}></input><br></br>
 
-                <label htmlFor="Instructor">Instructor:</label>
-                <input type="text" id="Instructor" placeholder="Instructor" onChange={this.handleonChange} value={this.state.Instructor}></input><br></br>
+                <label htmlFor="Instructor">Tags:</label>
+                <input type="text" id="Instructor" placeholder="Tags" onChange={this.handleonChange} value={this.state.Instructor}></input><br></br>
                 <button type="submit" value="submit">submit</button>
             </form>
         )

@@ -21,7 +21,6 @@ class Display extends React.Component{
             return(
                 <div class="course-display" key={element.id}>
                  <h3>Title :{element.title}</h3>
-                 <h5>Instructor :{element.Instructor}</h5>  
                  <h5>Details :{element.details}</h5>
                  <button id={element.id} onClick={this.handlerOnclick}>Delete</button>
                  </div>

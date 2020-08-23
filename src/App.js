@@ -7,10 +7,10 @@ import './App.css';
 class App extends React.Component {
   state = {
     Coursedetails :[
-       {id:"1",title:"node",details:"Its a ggod thing",Instructor:"Gryffindor"},
-       {id:"2",title:"React",details:"will learn",Instructor:"Hufflepuff"},
-       {id:"3",title:"CP",details:"Its a ggod thing",Instructor:"Slytherin"},
-       {id:"4",title:"C++",details:"Will do it soon",Instructor:"Ravenclaw"}
+       {id:"1",title:"node",details:"Its a ggod thing",Instructor:"Important"},
+       {id:"2",title:"React",details:"will learn",Instructor:"Important"},
+       {id:"3",title:"CP",details:"Its a ggod thing",Instructor:"Important"},
+       {id:"4",title:"C++",details:"Will do it soon",Instructor:"Important"}
       ]
 }     
     addcourse = (course) => {
@@ -23,7 +23,7 @@ class App extends React.Component {
     navbar = (course) => {
       let arr = this.state.Coursedetails.filter((cours1)=>{
       // console.log(course);
-        return cours1.Instructor === "Gryffindor"; 
+        return cours1.Instructor === course; 
       })
       console.log(arr);
       this.setState({
@@ -45,7 +45,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <h1>Course Details</h1>
+        <h1>Your To-Do List</h1>
         <Navbar filte={this.navbar}/>
         <Display
         coursedetails={this.state.Coursedetails}
